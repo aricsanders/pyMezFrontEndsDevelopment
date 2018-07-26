@@ -34,9 +34,10 @@
 <!--Begin by Introducing the user to the purpose of the web app-->
 <h1>Greetings {{user}} this is the vna data acquistion page </h1>
 {% autoescape off%}
-<h3>VNA Setup</h3>
+
 
 <div id="VNASetupDiv">
+    <h3>VNA Setup</h3>
     <!-- Beging with a selector that determines if the user wants to setup the vna or use the current
     instrument settings-->
   <label for="UserSetUp">Use the current instrument state</label>
@@ -56,7 +57,9 @@
         <br/>
 
     </form>
+</div>
     <hr/>
+<div id="ParameterSelectionDiv">
     <h3>Parameter Selection</h3>
     <form id="ParameterSelectionForm" style="">
         <select>
@@ -67,7 +70,9 @@
         </select>
 <!--Put port selection select here-->
     </form>
+</div>
     <hr/>
+<div id="MetadataDiv">
     <h3>Acquistion Metadata<input type="button" class="toggleButton" value="+" onclick="toggleId('MetaData',this)"></h3>
     <form id="MetaData">
         <label for="ConnectorType">Connector Type </label>
@@ -81,7 +86,7 @@
       <option value="OnWafer">On Wafer</option>
     </select>
     </form>
-
+</div>
     <h3>Acquire Data
 <input id="submitButton" type="submit" value="Take Data" class="btn btn-primary">
 </h3>
@@ -115,6 +120,11 @@ function hideOnCheck(checkBoxId,itemToShowId){
   }
 }
 
+function createSegementTable(){
+// get the number of segements
+var segmentNumber = document.getElementById("segmentNumber")
+var numberOfSegments = segmentNumber.value
+}
 </script>
 
 </div>
